@@ -894,34 +894,7 @@
     .hero-ctas { flex-direction: column; align-items: center; }
   }
 /* Animate all social icons */
-.fab, .fas, .far, img[src*="whatsapp"], img[src*="instagram"] {
-  display: inline-block;
-  animation: bounce 0.8s infinite ease;
-  transition: transform 0.2s;
-}
 
-.fab:hover, .fas:hover, .far:hover {
-  animation: none;
-  transform: scale(1.2);
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* Animate all emojis - works on any page */
-.emoji, [class*="emoji"], span:has(> 😊), 
-span:has(> ❤️), span:has(> 🎉) {
-  display: inline-block;
-  animation: wiggle 1s infinite ease;
-}
-
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(10deg); }
-  75% { transform: rotate(-10deg); }
-}
 
 <!-- ============================================================
      CURSOR
