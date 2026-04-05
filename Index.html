@@ -893,6 +893,161 @@
     .gallery-item:nth-child(4) { grid-column: span 2; }
     .hero-ctas { flex-direction: column; align-items: center; }
   }
+  /* =========================
+   ICON SYSTEM — PREMIUM UI
+   ========================= */
+
+/* Root variables for consistency */
+:root {
+  --icon-bg: rgba(255, 255, 255, 0.05);
+  --icon-border: rgba(255, 255, 255, 0.08);
+  --icon-glow: rgba(255, 120, 0, 0.6);
+  --icon-shadow: rgba(0, 0, 0, 0.5);
+  --icon-highlight: rgba(255, 255, 255, 0.15);
+  --primary: #ff6a00;
+}
+
+/* ICON CONTAINER */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 14px;
+
+  /* Glassmorphism */
+  background: var(--icon-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid var(--icon-border);
+
+  /* Depth */
+  box-shadow: 
+    0 8px 20px var(--icon-shadow),
+    inset 0 1px 2px var(--icon-highlight);
+
+  /* Smooth animation */
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* ICON SVG */
+.icon-box svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+  stroke-width: 1.8;
+  fill: none;
+
+  /* Glow effect */
+  filter: drop-shadow(0 0 6px var(--icon-glow));
+
+  transition: all 0.25s ease;
+}
+
+/* OPTIONAL: Filled icons version */
+.icon-box.filled svg {
+  fill: var(--primary);
+  stroke: none;
+}
+
+/* HOVER EFFECT */
+.icon-box:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.7),
+    0 0 15px var(--icon-glow),
+    inset 0 1px 2px var(--icon-highlight);
+}
+
+/* ICON reacts on hover */
+.icon-box:hover svg {
+  filter: drop-shadow(0 0 10px var(--icon-glow));
+  transform: scale(1.1);
+}
+
+/* ACTIVE / CLICK */
+.icon-box:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   INLINE ICON + TEXT (your list section)
+   ========================= */
+
+.icon-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* Text beside icon */
+.icon-row span {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   SMALL ICON VERSION
+   ========================= */
+
+.icon-box.small {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.icon-box.small svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   GLOW VARIANTS (optional)
+   ========================= */
+
+.icon-box.gold svg {
+  stroke: #ffd700;
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+}
+
+.icon-box.green svg {
+  stroke: #00ff95;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 149, 0.6));
+}
+
+.icon-box.red svg {
+  stroke: #ff4d4d;
+  filter: drop-shadow(0 0 6px rgba(255, 77, 77, 0.6));
+}
+
+/* =========================
+   SMOOTH ENTRANCE ANIMATION
+   ========================= */
+
+.icon-box {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.icon-box:nth-child(1) { animation-delay: 0.1s; }
+.icon-box:nth-child(2) { animation-delay: 0.2s; }
+.icon-box:nth-child(3) { animation-delay: 0.3s; }
+.icon-box:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    }
 </style>
 </head>
 <body>
