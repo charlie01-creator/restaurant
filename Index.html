@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Goût des Autres — Restaurant Solidaire | Châtellerault</title>
+<meta name="description" content="Le Goût des Autres : 1er restaurant solidaire à Châtellerault. Cuisine du monde — Gabon, Côte d'Ivoire, Brésil, Antilles. Tarifs solidaires. 3 Rue Alfred de Vigny, 86100 Châtellerault."/>
+<meta name="keywords" content="restaurant solidaire, Châtellerault, cuisine africaine, cuisine antillaise, insertion professionnelle, Le Goût des Autres, restaurant 86100"/>
+<meta property="og:title" content="Le Goût des Autres — Restaurant Solidaire à Châtellerault"/>
+<meta property="og:description" content="Le premier restaurant solidaire de Châtellerault. Cuisine du monde, tarifs selon ressources, insertion professionnelle."/>
+<meta property="og:type" content="restaurant"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,600&display=swap" rel="stylesheet"/>
+
+<style>
+  :root {
+    --terracotta: #C85A2D;
+    --terracotta-light: #E07A4F;
+    --terracotta-dark: #9B3E1B;
+    --deep-green: #1C3A2F;
+    --sage: #4A7A62;
+    --sage-light: #7AAF94;
+    --cream: #FAF6EF;
+    --warm-white: #FEFCF8;
+    --charcoal: #1A1A18;
+    --stone: #6B6355;
+    --gold: #C9A84C;
+    --gold-light: #E8CC7A;
+    --border: rgba(200,90,45,0.15);
+    --shadow-warm: 0 20px 60px rgba(28,58,47,0.12);
+    --shadow-card: 0 8px 32px rgba(26,26,24,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ──────────────── LANGUAGE TOGGLE ──────────────── */
+  .lang-bar {
+    background: var(--deep-green);
+    padding: 8px 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1.5px solid rgba(250,246,239,0.3);
+    color: var(--cream);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+  .lang-btn.active {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: #fff;
+  }
+  .lang-btn:hover:not(.active) {
+    background: rgba(250,246,239,0.1);
+    border-color: var(--cream);
+  }
+
+  /* ──────────────── NAVBAR ──────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(254,252,248,0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(28,58,47,0.08); }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+  .logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--deep-green);
+    letter-spacing: -0.02em;
+  }
+  .logo-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    color: var(--terracotta);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--stone);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--terracotta);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--terracotta-dark) !important; transform: translateY(-1px); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    width: 24px; height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: block;
+  }
+
+  /* ──────────────── HERO ──────────────── */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: clamp(60px, 8vw, 120px) clamp(30px, 6vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: var(--cream);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,90,45,0.1);
+    border: 1px solid rgba(200,90,45,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5.5vw, 76px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--deep-green);
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracotta);
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--stone);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    max-width: 460px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .pillar-icon {
+    width: 32px; height: 32px;
+    background: var(--deep-green);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .pillar-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--terracotta);
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover {
+    background: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(200,90,45,0.35);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--deep-green);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--deep-green);
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.02em;
+  }
+  .btn-secondary:hover {
+    background: var(--deep-green);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    position: relative;
+    overflow: hidden;
+    background: var(--deep-green);
+  }
+  .hero-visual-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: transform 8s ease;
+  }
+  .hero-visual:hover .hero-visual-img { transform: scale(1.04); }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(28,58,47,0.6) 0%, rgba(200,90,45,0.2) 100%);
+  }
+  .hero-stat-card {
+    position: absolute;
+    bottom: 40px;
+    left: -28px;
+    background: rgba(254,252,248,0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow-warm);
+    animation: fadeUp 1s ease 0.6s both;
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--stone);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  /* ──────────────── SECTION BASE ──────────────── */
+  section { padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    width: 28px; height: 1.5px;
+    background: var(--terracotta);
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--deep-green);
+    margin-bottom: 16px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--stone);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* ──────────────── TRUST BAND ──────────────── */
+  .trust-band {
+    background: var(--deep-green);
+    padding: 36px clamp(20px, 5vw, 60px);
+  }
+  .trust-band-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .trust-item {}
+  .trust-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .trust-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(250,246,239,0.75);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .trust-divider {
+    width: 1px;
+    background: rgba(250,246,239,0.1);
+    display: block;
+  }
+
+  /* ──────────────── ABOUT ──────────────── */
+  .about-section { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%;
+    border-radius: 24px;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+  }
+  .about-img-accent {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    width: 55%;
+    border-radius: 16px;
+    border: 6px solid var(--cream);
+    object-fit: cover;
+    aspect-ratio: 1;
+    box-shadow: var(--shadow-warm);
+  }
+  .about-tag {
+    position: absolute;
+    top: 24px;
+    left: -20px;
+    background: var(--terracotta);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    box-shadow: 0 8px 24px rgba(200,90,45,0.4);
+  }
+
+  .about-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .about-pillar-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .about-pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  .about-pillar-card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .about-pillar-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--deep-green);
+    margin-bottom: 6px;
+  }
+  .about-pillar-card p {
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.55;
+  }
+
+  /* ──────────────── MENU / SERVICES ──────────────── */
+  .menu-section { background: var(--warm-white); }
+  .menu-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--stone);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--deep-green);
+    border-color: var(--deep-green);
+    color: #fff;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .menu-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.35s, box-shadow 0.35s;
+    position: relative;
+  }
+  .menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-warm);
+  }
+  .menu-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+  }
+  .menu-card:hover .menu-card-img { transform: scale(1.06); }
+  .menu-card-body {
+    padding: 20px 22px 24px;
+  }
+  .menu-card-origin {
+    display: inline-block;
+    background: rgba(200,90,45,0.1);
+    color: var(--terracotta);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--deep-green);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .menu-card p {
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .menu-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .price-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sage);
+  }
+  .price-note {
+    font-size: 11px;
+    color: var(--stone);
+    margin-top: 2px;
+  }
+  .card-btn {
+    background: var(--terracotta);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-btn:hover {
+    background: var(--terracotta-dark);
+    transform: scale(1.05);
+  }
+
+  /* ──────────────── GALLERY ──────────────── */
+  .gallery-section { background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .gallery-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1;
+  }
+  .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(28,58,47,0.85) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay span {
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,24,0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px; right: 28px;
+    background: none; border: none;
+    color: #fff; font-size: 36px;
+    cursor: pointer; line-height: 1;
+    opacity: 0.7; transition: opacity 0.2s;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  /* ──────────────── TESTIMONIALS ──────────────── */
+  .testimonials-section { background: var(--deep-green); }
+  .testimonials-section .section-label { color: var(--gold); }
+  .testimonials-section .section-label::before { background: var(--gold); }
+  .testimonials-section .section-title { color: var(--cream); }
+  .testimonials-section .section-desc { color: rgba(250,246,239,0.65); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .review-card {
+    background: rgba(250,246,239,0.07);
+    border: 1px solid rgba(250,246,239,0.12);
+    border-radius: 20px;
+    padding: 28px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .review-card:hover {
+    background: rgba(250,246,239,0.12);
+    transform: translateY(-4px);
+  }
+  .stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .reviewer-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--cream);
+  }
+  .reviewer-info {
+    font-size: 12px;
+    color: rgba(250,246,239,0.5);
+    margin-top: 2px;
+  }
+
+  /* ──────────────── CONTACT & MAP ──────────────── */
+  .contact-section { background: var(--warm-white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-form {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(74,122,98,0.12);
+  }
+  .form-group textarea { height: 120px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%;
+    background: var(--terracotta);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 8px;
+    letter-spacing: 0.03em;
+  }
+  .form-submit:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-2px);
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 32px; }
+  .info-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  .info-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(74,122,98,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .info-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 6px;
+  }
+  .info-card p {
+    font-size: 15px;
+    color: var(--charcoal);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .info-card a {
+    color: var(--terracotta);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .info-card a:hover { text-decoration: underline; }
+
+  .map-embed {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    margin-top: 8px;
+  }
+  .map-embed iframe {
+    width: 100%; height: 220px;
+    display: block;
+    border: none;
+    filter: grayscale(20%) contrast(1.05);
+  }
+
+  .whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 14px;
+    padding: 16px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 4px;
+  }
+  .whatsapp-btn:hover {
+    background: #1DA851;
+    transform: translateY(-2px);
+  }
+  .whatsapp-icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ──────────────── FAQ ──────────────── */
+  .faq-section { background: var(--cream); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .faq-item:hover { box-shadow: var(--shadow-card); }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--deep-green);
+    text-align: left;
+    gap: 12px;
+    line-height: 1.4;
+  }
+  .faq-chevron {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(200,90,45,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--terracotta);
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-a {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-a {
+    max-height: 200px;
+    padding-bottom: 22px;
+  }
+  .faq-a p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+
+  /* ──────────────── CTA BAND ──────────────── */
+  .cta-band {
+    background: var(--terracotta);
+    padding: 70px clamp(20px, 5vw, 60px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cta-band p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    margin-bottom: 36px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-band .btn-white {
+    background: #fff;
+    color: var(--terracotta);
+    padding: 15px 36px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    border: 2px solid #fff;
+  }
+  .cta-band .btn-white:hover {
+    background: transparent;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* ──────────────── HOURS ──────────────── */
+  .hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .hours-day {
+    background: rgba(250,246,239,0.06);
+    border: 1px solid rgba(250,246,239,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .hours-day.closed { opacity: 0.4; }
+  .hours-day.special { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  .day-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.6);
+    margin-bottom: 4px;
+  }
+  .day-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--cream);
+    font-style: italic;
+  }
+  .hours-section { background: var(--deep-green); padding: 60px clamp(20px, 5vw, 60px); }
+  .hours-section .section-label { color: var(--gold); }
+  .hours-section .section-label::before { background: var(--gold); }
+  .hours-section .section-title { color: var(--cream); }
+
+  /* ──────────────── FOOTER ──────────────── */
+  footer {
+    background: var(--charcoal);
+    padding: 60px clamp(20px, 5vw, 60px) 32px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand .logo-main { color: var(--cream); font-size: 22px; }
+  .footer-brand .logo-sub { color: var(--terracotta); }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(250,246,239,0.5);
+    margin-top: 12px;
+    line-height: 1.6;
+    max-width: 240px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .social-link {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: rgba(250,246,239,0.08);
+    border: 1px solid rgba(250,246,239,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .social-link:hover {
+    background: var(--terracotta);
+    transform: translateY(-2px);
+  }
+  .footer-col h5 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.4);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: rgba(250,246,239,0.65);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--terracotta); }
+  .footer-bottom {
+    border-top: 1px solid rgba(250,246,239,0.06);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(250,246,239,0.3);
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(250,246,239,0.3);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--terracotta); }
+
+  /* ──────────────── STICKY CTA ──────────────── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 900;
+  }
+  .sticky-btn {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .sticky-btn:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+  .sticky-phone { background: var(--terracotta); }
+  .sticky-wa { background: #25D366; }
+
+  /* ──────────────── ANIMATIONS ──────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ──────────────── PAGE SECTIONS ──────────────── */
+  .page-section {
+    display: none;
+  }
+  .page-section.active {
+    display: block;
+  }
+
+  /* ──────────────── MOBILE ──────────────── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { height: 300px; }
+    .hero-stat-card { left: 16px; bottom: 16px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-img-accent { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .trust-band-inner { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      background: var(--warm-white);
+      padding: 100px 32px 40px;
+      gap: 24px;
+      z-index: 999;
+    }
+    .nav-links.open a { font-size: 18px; }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .trust-band-inner { grid-template-columns: repeat(2, 1fr); }
+    .about-pillars-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hours-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ──────────────── MOBILE MENU OVERLAY ──────────────── */
+  .close-menu {
+    display: none;
+    position: fixed;
+    top: 24px; right: 24px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--charcoal);
+  }
+  .nav-links.open ~ .close-menu { display: block; }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="logo" onclick="showPage('home')">
+    <span class="logo-main">Le Goût des Autres</span>
+    <span class="logo-sub" data-fr="Restaurant Solidaire" data-en="Solidarity Restaurant">Restaurant Solidaire</span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('home')" data-fr="Accueil" data-en="Home">Accueil</a></li>
+    <li><a href="#" onclick="showPage('about')" data-fr="À propos" data-en="About">À propos</a></li>
+    <li><a href="#" onclick="showPage('menu')" data-fr="Menu" data-en="Menu">Menu</a></li>
+    <li><a href="#" onclick="showPage('gallery')" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+    <li><a href="#" onclick="showPage('contact')" data-fr="Contact" data-en="Contact">Contact</a></li>
+    <li><a href="#" onclick="showPage('faq')" class="nav-cta" data-fr="Réserver" data-en="Reserve">Réserver</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <span data-fr="1er Restaurant Solidaire — Châtellerault" data-en="1st Solidarity Restaurant — Châtellerault">1er Restaurant Solidaire — Châtellerault</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-fr="La Table qui" data-en="The Table that">La Table qui</span>
+        <em data-fr="Rassemble" data-en="Unites">Rassemble</em>
+        <span data-fr="& Nourrit" data-en="& Nourishes">& Nourrit</span>
+      </h1>
+
+      <p class="hero-sub" data-fr="Cuisine du monde aux saveurs d'Afrique, des Antilles et du Brésil. Des tarifs à la portée de tous, dans un esprit de solidarité et de convivialité." data-en="World cuisine with flavours from Africa, the Caribbean and Brazil. Prices accessible to all, in a spirit of solidarity and conviviality.">
+        Cuisine du monde aux saveurs d'Afrique, des Antilles et du Brésil. Des tarifs à la portée de tous, dans un esprit de solidarité et de convivialité.
+      </p>
+
+      <div class="hero-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌍</div>
+          <span class="pillar-text" data-fr="Cuisine du Monde — Gabon, Côte d'Ivoire, Martinique, Brésil" data-en="World Cuisine — Gabon, Ivory Coast, Martinique, Brazil">Cuisine du Monde — Gabon, Côte d'Ivoire, Martinique, Brésil</span>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <span class="pillar-text" data-fr="Tarifs solidaires selon vos ressources" data-en="Solidarity prices based on your income">Tarifs solidaires selon vos ressources</span>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💼</div>
+          <span class="pillar-text" data-fr="Insertion professionnelle & chantier d'insertion" data-en="Professional integration & social enterprise">Insertion professionnelle & chantier d'insertion</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="tel:0579799452" class="btn-primary">📞 <span data-fr="Nous appeler" data-en="Call us">Nous appeler</span></a>
+        <a href="#" onclick="showPage('menu')" class="btn-secondary">🍽️ <span data-fr="Voir le menu" data-en="View menu">Voir le menu</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80&auto=format"
+        alt="Restaurant Le Goût des Autres"
+        class="hero-visual-img"
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num">⭐ 4.5</div>
+        <div class="hero-stat-label" data-fr="Note Google Maps" data-en="Google Maps Rating">Note Google Maps</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAND -->
+  <div class="trust-band">
+    <div class="trust-band-inner">
+      <div class="trust-item">
+        <div class="trust-num">#1</div>
+        <div class="trust-label" data-fr="Restaurant Solidaire à Châtellerault" data-en="Solidarity Restaurant in Châtellerault">Restaurant Solidaire à Châtellerault</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">4</div>
+        <div class="trust-label" data-fr="Continents représentés dans notre cuisine" data-en="Continents represented in our cuisine">Continents représentés dans notre cuisine</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">6j</div>
+        <div class="trust-label" data-fr="Ouverts par semaine, midi & soir vendredi" data-en="Open days per week, lunch & Friday evening">Ouverts par semaine, midi & soir vendredi</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">💚</div>
+        <div class="trust-label" data-fr="Solidarité, Insertion, Convivialité" data-en="Solidarity, Integration, Conviviality">Solidarité, Insertion, Convivialité</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image-wrap animate-on-scroll">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&auto=format"
+            alt="Ambiance restaurant"
+            class="about-img-main"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&q=80&auto=format"
+            alt="Plat africain"
+            class="about-img-accent"
+            loading="lazy"
+          />
+          <div class="about-tag" data-fr="Cuisine du Monde 🌍" data-en="World Cuisine 🌍">Cuisine du Monde 🌍</div>
+        </div>
+        <div class="animate-on-scroll">
+          <div class="section-label" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</div>
+          <h2 class="section-title">
+            <span data-fr="Bien plus qu'un" data-en="Far more than">Bien plus qu'un</span><br>
+            <em data-fr="restaurant" data-en="a restaurant">restaurant</em>
+          </h2>
+          <p class="section-desc" data-fr="Le Goût des Autres est né d'une conviction : la table peut changer la vie. Ici, chaque repas est un acte solidaire — pour ceux qui cuisinent, et pour ceux qui dégustent." data-en="Le Goût des Autres was born from a conviction: the table can change lives. Here, every meal is an act of solidarity — for those who cook, and for those who dine.">
+            Le Goût des Autres est né d'une conviction : la table peut changer la vie. Ici, chaque repas est un acte solidaire — pour ceux qui cuisinent, et pour ceux qui dégustent.
+          </p>
+          <div class="about-pillars-grid" style="margin-top:28px">
+            <div class="about-pillar-card animate-on-scroll">
+              <span class="icon">🌱</span>
+              <h4 data-fr="Insertion Pro" data-en="Pro Integration">Insertion Pro</h4>
+              <p data-fr="Un chantier d'insertion pour donner une seconde chance." data-en="A social enterprise giving people a second chance.">Un chantier d'insertion pour donner une seconde chance.</p>
+            </div>
+            <div class="about-pillar-card animate-on-scroll">
+              <span class="icon">💰</span>
+              <h4 data-fr="Tarifs Solidaires" data-en="Solidarity Prices">Tarifs Solidaires</h4>
+              <p data-fr="Des prix adaptés à toutes les bourses, sans exception." data-en="Prices adapted to all budgets, without exception.">Des prix adaptés à toutes les bourses, sans exception.</p>
+            </div>
+            <div class="about-pillar-card animate-on-scroll">
+              <span class="icon">🍲</span>
+              <h4 data-fr="Cuisine Mondiale" data-en="World Cuisine">Cuisine Mondiale</h4>
+              <p data-fr="Recettes d'Afrique, des Antilles, du Brésil et d'ailleurs." data-en="Recipes from Africa, the Caribbean, Brazil and beyond.">Recettes d'Afrique, des Antilles, du Brésil et d'ailleurs.</p>
+            </div>
+            <div class="about-pillar-card animate-on-scroll">
+              <span class="icon">🤲</span>
+              <h4 data-fr="Lien Social" data-en="Social Bond">Lien Social</h4>
+              <p data-fr="Créer du lien entre toutes les personnes autour de la cuisine." data-en="Building connections between people around food.">Créer du lien entre toutes les personnes autour de la cuisine.</p>
+            </div>
+          </div>
+          <div style="margin-top:32px">
+            <a href="#" onclick="showPage('about')" class="btn-primary" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU PREVIEW -->
+  <section class="menu-section">
+    <div class="section-inner">
+      <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px">
+        <div class="section-label" style="justify-content:center" data-fr="Nos Saveurs" data-en="Our Flavours">Nos Saveurs</div>
+        <h2 class="section-title" data-fr="Un voyage culinaire <em>sans frontières</em>" data-en="A culinary journey <em>without borders</em>">Un voyage culinaire <em>sans frontières</em></h2>
+        <p class="section-desc" style="margin:0 auto" data-fr="Du Gabon à la Martinique, de la Côte d'Ivoire au Brésil — nos plats racontent des histoires." data-en="From Gabon to Martinique, from Ivory Coast to Brazil — our dishes tell stories.">Du Gabon à la Martinique, de la Côte d'Ivoire au Brésil — nos plats racontent des histoires.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card animate-on-scroll">
+          <div style="overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80&auto=format" alt="Cuisine Africaine" class="menu-card-img" loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Afrique de l'Ouest" data-en="West Africa">Afrique de l'Ouest</span>
+            <h3 data-fr="Plats Africains" data-en="African Dishes">Plats Africains</h3>
+            <p data-fr="Découvrez les saveurs authentiques du Gabon, de la Côte d'Ivoire et d'autres nations d'Afrique de l'Ouest." data-en="Discover the authentic flavours of Gabon, Ivory Coast and other West African nations.">Découvrez les saveurs authentiques du Gabon, de la Côte d'Ivoire et d'autres nations d'Afrique de l'Ouest.</p>
+            <div class="menu-card-footer">
+              <div>
+                <div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div>
+                <div class="price-note" data-fr="Selon ressources" data-en="Based on income">Selon ressources</div>
+              </div>
+              <a href="tel:0579799452" class="card-btn">📞 <span data-fr="Réserver" data-en="Reserve">Réserver</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll">
+          <div style="overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80&auto=format" alt="Cuisine Antillaise" class="menu-card-img" loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Antilles" data-en="Caribbean">Antilles</span>
+            <h3 data-fr="Plats Antillais" data-en="Caribbean Dishes">Plats Antillais</h3>
+            <p data-fr="Les saveurs ensoleillées de Martinique, Guadeloupe et Haïti — épices, légumes-pays et accras." data-en="The sunny flavours of Martinique, Guadeloupe and Haiti — spices, local vegetables and accras.">Les saveurs ensoleillées de Martinique, Guadeloupe et Haïti — épices, légumes-pays et accras.</p>
+            <div class="menu-card-footer">
+              <div>
+                <div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div>
+                <div class="price-note" data-fr="Selon ressources" data-en="Based on income">Selon ressources</div>
+              </div>
+              <a href="tel:0579799452" class="card-btn">📞 <span data-fr="Réserver" data-en="Reserve">Réserver</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll">
+          <div style="overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91798d5dc6?w=600&q=80&auto=format" alt="Cuisine Brésilienne" class="menu-card-img" loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Brésil" data-en="Brazil">Brésil</span>
+            <h3 data-fr="Plats Brésiliens" data-en="Brazilian Dishes">Plats Brésiliens</h3>
+            <p data-fr="La richesse culinaire du Brésil : feijoada, moqueca et autres spécialités chaleureuses et savoureuses." data-en="The culinary richness of Brazil: feijoada, moqueca and other hearty specialities.">La richesse culinaire du Brésil : feijoada, moqueca et autres spécialités chaleureuses et savoureuses.</p>
+            <div class="menu-card-footer">
+              <div>
+                <div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div>
+                <div class="price-note" data-fr="Selon ressources" data-en="Based on income">Selon ressources</div>
+              </div>
+              <a href="tel:0579799452" class="card-btn">📞 <span data-fr="Réserver" data-en="Reserve">Réserver</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="#" onclick="showPage('menu')" class="btn-secondary" data-fr="Voir tout le menu →" data-en="View full menu →">Voir tout le menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-inner">
+      <div class="section-label" data-fr="Ils nous font confiance" data-en="They trust us">Ils nous font confiance</div>
+      <h2 class="section-title" data-fr="Ce que disent <em>nos clients</em>" data-en="What our <em>clients say</em>">Ce que disent <em>nos clients</em></h2>
+      <p class="section-desc" data-fr="Des expériences authentiques, partagées avec chaleur." data-en="Authentic experiences, shared with warmth.">Des expériences authentiques, partagées avec chaleur.</p>
+      <div class="reviews-grid">
+        <div class="review-card animate-on-scroll">
+          <div class="stars">★★★★★</div>
+          <p class="review-text" data-fr="&ldquo;Un endroit unique à Châtellerault. La cuisine est délicieuse, les prix sont honnêtes et l'ambiance est vraiment chaleureuse. Je recommande vivement !&rdquo;" data-en="&ldquo;A unique place in Châtellerault. The food is delicious, prices are fair and the atmosphere is truly warm. Highly recommended!&rdquo;">&ldquo;Un endroit unique à Châtellerault. La cuisine est délicieuse, les prix sont honnêtes et l'ambiance est vraiment chaleureuse. Je recommande vivement !&rdquo;</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">M</div>
+            <div>
+              <div class="reviewer-name">Marie L.</div>
+              <div class="reviewer-info" data-fr="Cliente régulière · Châtellerault" data-en="Regular customer · Châtellerault">Cliente régulière · Châtellerault</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card animate-on-scroll">
+          <div class="stars">★★★★★</div>
+          <p class="review-text" data-fr="&ldquo;La feijoada brésilienne était extraordinaire. Un vrai voyage gustatif. Et quelle belle initiative solidaire ! Bravo à toute l'équipe.&rdquo;" data-en="&ldquo;The Brazilian feijoada was extraordinary. A real culinary journey. And what a wonderful solidarity initiative! Bravo to the whole team.&rdquo;">&ldquo;La feijoada brésilienne était extraordinaire. Un vrai voyage gustatif. Et quelle belle initiative solidaire ! Bravo à toute l'équipe.&rdquo;</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">T</div>
+            <div>
+              <div class="reviewer-name">Thomas R.</div>
+              <div class="reviewer-info" data-fr="Google Maps · ⭐⭐⭐⭐⭐" data-en="Google Maps · ⭐⭐⭐⭐⭐">Google Maps · ⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card animate-on-scroll">
+          <div class="stars">★★★★★</div>
+          <p class="review-text" data-fr="&ldquo;J'y emmène mes collègues chaque vendredi soir. La cuisine antillaise est excellente et l'initiative sociale est vraiment inspirante. Un must à Châtellerault.&rdquo;" data-en="&ldquo;I bring my colleagues every Friday evening. The Caribbean cuisine is excellent and the social initiative is truly inspiring. A must in Châtellerault.&rdquo;">&ldquo;J'y emmène mes collègues chaque vendredi soir. La cuisine antillaise est excellente et l'initiative sociale est vraiment inspirante. Un must à Châtellerault.&rdquo;</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <div class="reviewer-name">Sophie D.</div>
+              <div class="reviewer-info" data-fr="Visiteuse régulière" data-en="Regular visitor">Visiteuse régulière</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div style="position:relative;z-index:1">
+      <h2 data-fr="Venez vivre l'expérience" data-en="Come live the experience">Venez vivre l'expérience</h2>
+      <p data-fr="Réservez votre table dès maintenant et découvrez notre cuisine solidaire et généreuse." data-en="Book your table now and discover our generous and solidarity-driven cuisine.">Réservez votre table dès maintenant et découvrez notre cuisine solidaire et généreuse.</p>
+      <a href="tel:0579799452" class="btn-white">📞 <span data-fr="05 79 79 94 52" data-en="05 79 79 94 52">05 79 79 94 52</span></a>
+    </div>
+  </div>
+
+</div><!-- end page-home -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section" id="page-about">
+
+  <!-- PAGE HERO -->
+  <div style="background:var(--deep-green);padding:80px clamp(20px,5vw,60px) 60px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(200,90,45,0.15) 0%, transparent 60%)"></div>
+    <div style="max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center;color:var(--gold)" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</div>
+      <h1 class="section-title" style="color:var(--cream);font-size:clamp(36px,5vw,64px)" data-fr="Le Goût des Autres, <em>une révolution douce</em>" data-en="Le Goût des Autres, <em>a gentle revolution</em>">Le Goût des Autres, <em>une révolution douce</em></h1>
+    </div>
+  </div>
+
+  <section class="about-section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="animate-on-scroll">
+          <div class="section-label" data-fr="Mission & Vision" data-en="Mission & Vision">Mission & Vision</div>
+          <h2 class="section-title" data-fr="Manger ensemble, <em>changer ensemble</em>" data-en="Eating together, <em>changing together</em>">Manger ensemble, <em>changer ensemble</em></h2>
+          <p style="color:var(--stone);font-size:15px;line-height:1.8;margin-bottom:20px" data-fr="Le Goût des Autres est le premier restaurant solidaire de Châtellerault, créé autour de trois valeurs fondamentales : l'insertion professionnelle, la solidarité tarifaire et la convivialité humaine." data-en="Le Goût des Autres is the first solidarity restaurant in Châtellerault, built around three core values: professional integration, price solidarity and human conviviality.">
+            Le Goût des Autres est le premier restaurant solidaire de Châtellerault, créé autour de trois valeurs fondamentales : l'insertion professionnelle, la solidarité tarifaire et la convivialité humaine.
+          </p>
+          <p style="color:var(--stone);font-size:15px;line-height:1.8;margin-bottom:32px" data-fr="Notre mission est simple mais profonde : utiliser la cuisine comme levier d'inclusion sociale. Chaque assiette est une histoire, chaque convive est un acteur du changement." data-en="Our mission is simple but profound: use cooking as a lever for social inclusion. Every plate is a story, every diner is an agent of change.">
+            Notre mission est simple mais profonde : utiliser la cuisine comme levier d'inclusion sociale. Chaque assiette est une histoire, chaque convive est un acteur du changement.
+          </p>
+
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:16px;padding:20px;border:1px solid var(--border)">
+              <div style="font-size:28px;flex-shrink:0">🎯</div>
+              <div>
+                <h4 style="font-family:'DM Sans',sans-serif;font-weight:700;color:var(--deep-green);margin-bottom:6px" data-fr="Notre Mission" data-en="Our Mission">Notre Mission</h4>
+                <p style="font-size:14px;color:var(--stone);line-height:1.6" data-fr="Proposer des repas de qualité à des tarifs solidaires, tout en offrant des parcours d'insertion professionnelle à des personnes éloignées de l'emploi." data-en="Provide quality meals at solidarity prices, while offering professional integration pathways to people far from employment.">Proposer des repas de qualité à des tarifs solidaires, tout en offrant des parcours d'insertion professionnelle à des personnes éloignées de l'emploi.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:16px;padding:20px;border:1px solid var(--border)">
+              <div style="font-size:28px;flex-shrink:0">🌟</div>
+              <div>
+                <h4 style="font-family:'DM Sans',sans-serif;font-weight:700;color:var(--deep-green);margin-bottom:6px" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</h4>
+                <p style="font-size:14px;color:var(--stone);line-height:1.6" data-fr="Un Châtellerault où la table est un espace d'égalité, de rencontre et de mixité sociale — une ville où personne n'est exclu du plaisir de bien manger." data-en="A Châtellerault where the table is a space of equality, encounter and social mix — a city where no one is excluded from the pleasure of eating well.">Un Châtellerault où la table est un espace d'égalité, de rencontre et de mixité sociale — une ville où personne n'est exclu du plaisir de bien manger.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-wrap animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80&auto=format" alt="Notre cuisine" class="about-img-main" loading="lazy"/>
+          <div class="about-tag" data-fr="Cuisine & Solidarité" data-en="Cuisine & Solidarity">Cuisine & Solidarité</div>
+        </div>
+      </div>
+
+      <!-- WHY CHOOSE US -->
+      <div style="margin-top:80px">
+        <div class="animate-on-scroll" style="text-align:center;margin-bottom:48px">
+          <div class="section-label" style="justify-content:center" data-fr="Pourquoi nous choisir" data-en="Why choose us">Pourquoi nous choisir</div>
+          <h2 class="section-title" data-fr="5 raisons de nous <em>faire confiance</em>" data-en="5 reasons to <em>trust us</em>">5 raisons de nous <em>faire confiance</em></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px">
+          <div class="about-pillar-card animate-on-scroll" style="text-align:center;padding:32px 24px">
+            <span class="icon" style="font-size:40px">🌍</span>
+            <h4 style="margin-bottom:10px;font-size:17px" data-fr="Authenticité Mondiale" data-en="Global Authenticity">Authenticité Mondiale</h4>
+            <p data-fr="Des recettes authentiques directement issues des cultures africaines, antillaises et brésiliennes." data-en="Authentic recipes directly from African, Caribbean and Brazilian cultures.">Des recettes authentiques directement issues des cultures africaines, antillaises et brésiliennes.</p>
+          </div>
+          <div class="about-pillar-card animate-on-scroll" style="text-align:center;padding:32px 24px">
+            <span class="icon" style="font-size:40px">💚</span>
+            <h4 style="margin-bottom:10px;font-size:17px" data-fr="Impact Social Réel" data-en="Real Social Impact">Impact Social Réel</h4>
+            <p data-fr="Chaque repas contribue directement à l'insertion professionnelle de personnes en difficulté." data-en="Every meal directly contributes to the professional integration of people in need.">Chaque repas contribue directement à l'insertion professionnelle de personnes en difficulté.</p>
+          </div>
+          <div class="about-pillar-card animate-on-scroll" style="text-align:center;padding:32px 24px">
+            <span class="icon" style="font-size:40px">⚖️</span>
+            <h4 style="margin-bottom:10px;font-size:17px" data-fr="Tarifs Équitables" data-en="Fair Prices">Tarifs Équitables</h4>
+            <p data-fr="Nos prix s'adaptent à vos ressources. La qualité culinaire ne devrait pas être un privilège." data-en="Our prices adapt to your resources. Culinary quality shouldn't be a privilege.">Nos prix s'adaptent à vos ressources. La qualité culinaire ne devrait pas être un privilège.</p>
+          </div>
+          <div class="about-pillar-card animate-on-scroll" style="text-align:center;padding:32px 24px">
+            <span class="icon" style="font-size:40px">🤝</span>
+            <h4 style="margin-bottom:10px;font-size:17px" data-fr="Lien Humain" data-en="Human Connection">Lien Humain</h4>
+            <p data-fr="Notre salle est un espace de rencontre où toutes les origines et tous les milieux se mélangent." data-en="Our dining room is a meeting space where all origins and backgrounds mix.">Notre salle est un espace de rencontre où toutes les origines et tous les milieux se mélangent.</p>
+          </div>
+          <div class="about-pillar-card animate-on-scroll" style="text-align:center;padding:32px 24px">
+            <span class="icon" style="font-size:40px">🏆</span>
+            <h4 style="margin-bottom:10px;font-size:17px" data-fr="Pionnier Local" data-en="Local Pioneer">Pionnier Local</h4>
+            <p data-fr="Premier du genre à Châtellerault, reconnu par la ville et les acteurs sociaux locaux." data-en="First of its kind in Châtellerault, recognized by the city and local social actors.">Premier du genre à Châtellerault, reconnu par la ville et les acteurs sociaux locaux.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div style="position:relative;z-index:1">
+      <h2 data-fr="Rejoignez notre table" data-en="Join our table">Rejoignez notre table</h2>
+      <p data-fr="Venez découvrir notre restaurant et participer à cette belle aventure humaine." data-en="Come discover our restaurant and be part of this beautiful human adventure.">Venez découvrir notre restaurant et participer à cette belle aventure humaine.</p>
+      <a href="tel:0579799452" class="btn-white">📞 <span data-fr="Réserver une table" data-en="Reserve a table">Réserver une table</span></a>
+    </div>
+  </div>
+
+</div><!-- end page-about -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     MENU PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section" id="page-menu">
+
+  <div style="background:var(--deep-green);padding:80px clamp(20px,5vw,60px) 60px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 60%)"></div>
+    <div style="max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center;color:var(--gold)" data-fr="Notre Menu" data-en="Our Menu">Notre Menu</div>
+      <h1 class="section-title" style="color:var(--cream);font-size:clamp(36px,5vw,64px)" data-fr="Un voyage <em>gastronomique</em> solidaire" data-en="A solidarity <em>gastronomic</em> journey">Un voyage <em>gastronomique</em> solidaire</h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(250,246,239,0.7);font-style:italic;margin-top:16px" data-fr="Gabon • Côte d'Ivoire • Martinique • Guadeloupe • Haïti • Brésil" data-en="Gabon • Ivory Coast • Martinique • Guadeloupe • Haiti • Brazil">Gabon • Côte d'Ivoire • Martinique • Guadeloupe • Haïti • Brésil</p>
+    </div>
+  </div>
+
+  <section class="menu-section">
+    <div class="section-inner">
+
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-fr="Tous les plats" data-en="All dishes" onclick="filterMenu('all',this)">Tous les plats</button>
+        <button class="tab-btn" data-fr="🌍 Afrique" data-en="🌍 Africa" onclick="filterMenu('africa',this)">🌍 Afrique</button>
+        <button class="tab-btn" data-fr="🌊 Antilles" data-en="🌊 Caribbean" onclick="filterMenu('antilles',this)">🌊 Antilles</button>
+        <button class="tab-btn" data-fr="🇧🇷 Brésil" data-en="🇧🇷 Brazil" onclick="filterMenu('brazil',this)">🇧🇷 Brésil</button>
+        <button class="tab-btn" data-fr="🥗 Entrées" data-en="🥗 Starters" onclick="filterMenu('starter',this)">🥗 Entrées</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <div class="menu-card animate-on-scroll" data-cat="africa">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80&auto=format" alt="Poulet Yassa" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Sénégal / Côte d'Ivoire" data-en="Senegal / Ivory Coast">Sénégal / Côte d'Ivoire</span>
+            <h3 data-fr="Poulet Yassa" data-en="Yassa Chicken">Poulet Yassa</h3>
+            <p data-fr="Poulet mariné aux oignons, citron et moutarde, mijoté lentement pour une saveur incomparable." data-en="Chicken marinated with onions, lemon and mustard, slowly simmered for an incomparable flavour.">Poulet mariné aux oignons, citron et moutarde, mijoté lentement pour une saveur incomparable.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div><div class="price-note" data-fr="Selon vos ressources" data-en="Based on your income">Selon vos ressources</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-cat="africa">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80&auto=format" alt="Fufu Sauce Arachide" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Gabon / Afrique Centrale" data-en="Gabon / Central Africa">Gabon / Afrique Centrale</span>
+            <h3 data-fr="Fufu & Sauce Arachide" data-en="Fufu & Peanut Sauce">Fufu & Sauce Arachide</h3>
+            <p data-fr="Le plat emblématique du Gabon — pâte de manioc accompagnée d'une riche sauce aux arachides." data-en="Gabon's iconic dish — cassava paste accompanied by a rich peanut sauce.">Le plat emblématique du Gabon — pâte de manioc accompagnée d'une riche sauce aux arachides.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div><div class="price-note" data-fr="Selon vos ressources" data-en="Based on your income">Selon vos ressources</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-cat="antilles">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1533007716222-4b465613a984?w=600&q=80&auto=format" alt="Accras de Morue" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Martinique / Guadeloupe" data-en="Martinique / Guadeloupe">Martinique / Guadeloupe</span>
+            <h3 data-fr="Accras de Morue" data-en="Salt Cod Fritters">Accras de Morue</h3>
+            <p data-fr="Beignets croustillants à la morue, aux herbes fraîches et au piment — un classique antillais irrésistible." data-en="Crispy salt cod fritters with fresh herbs and chilli — an irresistible Caribbean classic.">Beignets croustillants à la morue, aux herbes fraîches et au piment — un classique antillais irrésistible.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Entrée" data-en="Starter">Entrée</div><div class="price-note" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-cat="antilles">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=600&q=80&auto=format" alt="Colombo de Poulet" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Martinique" data-en="Martinique">Martinique</span>
+            <h3 data-fr="Colombo de Poulet" data-en="Chicken Colombo">Colombo de Poulet</h3>
+            <p data-fr="Ragoût de poulet aux épices colombo — curry antillais parfumé aux légumes du jardin créole." data-en="Chicken stew with colombo spices — Caribbean curry perfumed with Creole garden vegetables.">Ragoût de poulet aux épices colombo — curry antillais parfumé aux légumes du jardin créole.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div><div class="price-note" data-fr="Selon vos ressources" data-en="Based on your income">Selon vos ressources</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-cat="brazil">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1551183053-bf91798d5dc6?w=600&q=80&auto=format" alt="Feijoada" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Brésil" data-en="Brazil">Brésil</span>
+            <h3 data-fr="Feijoada" data-en="Feijoada">Feijoada</h3>
+            <p data-fr="Le plat national brésilien — un ragoût de haricots noirs mijoté avec de la viande de porc, servi avec du riz et de la farofa." data-en="Brazil's national dish — a slow-cooked black bean stew with pork, served with rice and farofa.">Le plat national brésilien — un ragoût de haricots noirs mijoté avec de la viande de porc, servi avec du riz et de la farofa.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div><div class="price-note" data-fr="Selon vos ressources" data-en="Based on your income">Selon vos ressources</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-cat="starter africa">
+          <div style="overflow:hidden"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format" alt="Salade Tropicale" class="menu-card-img" loading="lazy"/></div>
+          <div class="menu-card-body">
+            <span class="menu-card-origin" data-fr="Entrée du Monde" data-en="World Starter">Entrée du Monde</span>
+            <h3 data-fr="Salade Tropicale" data-en="Tropical Salad">Salade Tropicale</h3>
+            <p data-fr="Une fraîche combinaison d'avocat, mangue, légumes-pays et vinaigrette aux herbes créoles." data-en="A fresh combination of avocado, mango, local vegetables and Creole herb dressing.">Une fraîche combinaison d'avocat, mangue, légumes-pays et vinaigrette aux herbes créoles.</p>
+            <div class="menu-card-footer">
+              <div><div class="price-label" data-fr="Entrée" data-en="Starter">Entrée</div><div class="price-note" data-fr="Tarif solidaire" data-en="Solidarity price">Tarif solidaire</div></div>
+              <a href="tel:0579799452" class="card-btn">📞</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:48px;background:rgba(74,122,98,0.08);border:1px solid rgba(74,122,98,0.2);border-radius:20px;padding:32px;text-align:center">
+        <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--deep-green);margin-bottom:10px" data-fr="💡 Comment fonctionnent nos tarifs ?" data-en="💡 How do our prices work?">💡 Comment fonctionnent nos tarifs ?</p>
+        <p style="color:var(--stone);font-size:14px;line-height:1.7;max-width:600px;margin:0 auto 20px" data-fr="Nos prix sont établis selon un principe de solidarité : ils s'adaptent à vos ressources. Vous payez ce que vous pouvez, dans un esprit de partage et de dignité. Appelez-nous ou venez directement pour en savoir plus." data-en="Our prices are set on a solidarity principle: they adapt to your resources. You pay what you can, in a spirit of sharing and dignity. Call us or come directly to find out more.">Nos prix sont établis selon un principe de solidarité : ils s'adaptent à vos ressources. Vous payez ce que vous pouvez, dans un esprit de partage et de dignité. Appelez-nous ou venez directement pour en savoir plus.</p>
+        <a href="tel:0579799452" class="btn-primary">📞 <span data-fr="05 79 79 94 52" data-en="05 79 79 94 52">05 79 79 94 52</span></a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-menu -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     GALLERY PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section" id="page-gallery">
+
+  <div style="background:var(--deep-green);padding:80px clamp(20px,5vw,60px) 60px;text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(200,90,45,0.12) 0%, transparent 70%)"></div>
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center;color:var(--gold)" data-fr="Notre Galerie" data-en="Our Gallery">Notre Galerie</div>
+      <h1 class="section-title" style="color:var(--cream)" data-fr="Les <em>saveurs</em> en images" data-en="<em>Flavours</em> in pictures">Les <em>saveurs</em> en images</h1>
+    </div>
+  </div>
+
+  <section class="gallery-section">
+    <div class="section-inner">
+      <div class="gallery-grid">
+
+        <div class="gallery-item tall animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format" alt="Ambiance restaurant" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Ambiance chaleureuse" data-en="Warm atmosphere">Ambiance chaleureuse</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80&auto=format" alt="Plat africain" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Cuisine africaine" data-en="African cuisine">Cuisine africaine</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80&auto=format" alt="Sauce arachide" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Sauce arachide" data-en="Peanut sauce">Sauce arachide</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80&auto=format" alt="Plat antillais" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Plat antillais" data-en="Caribbean dish">Plat antillais</span></div>
+        </div>
+
+        <div class="gallery-item tall animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91798d5dc6?w=800&q=80&auto=format" alt="Feijoada brésilienne" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Feijoada brésilienne" data-en="Brazilian Feijoada">Feijoada brésilienne</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1533007716222-4b465613a984?w=600&q=80&auto=format" alt="Accras" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Accras de morue" data-en="Salt cod fritters">Accras de morue</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format" alt="Salade tropicale" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Salade tropicale" data-en="Tropical salad">Salade tropicale</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&auto=format" alt="Intérieur restaurant" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Notre salle" data-en="Our dining room">Notre salle</span></div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format" alt="Buffet" loading="lazy"/>
+          <div class="gallery-overlay"><span data-fr="Spécialités du jour" data-en="Daily specials">Spécialités du jour</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-gallery -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section" id="page-contact">
+
+  <div style="background:var(--deep-green);padding:80px clamp(20px,5vw,60px) 60px;text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%)"></div>
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center;color:var(--gold)" data-fr="Nous Contacter" data-en="Contact Us">Nous Contacter</div>
+      <h1 class="section-title" style="color:var(--cream)" data-fr="Venez nous <em>rendre visite</em>" data-en="Come and <em>visit us</em>">Venez nous <em>rendre visite</em></h1>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <div>
+          <h2 class="section-title" style="margin-bottom:8px" data-fr="Écrivez-nous" data-en="Write to us">Écrivez-nous</h2>
+          <p class="section-desc" style="margin-bottom:32px;font-size:16px" data-fr="Réservations, questions ou partenariats — nous sommes à votre écoute." data-en="Reservations, questions or partnerships — we are here for you.">Réservations, questions ou partenariats — nous sommes à votre écoute.</p>
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label data-fr="Prénom" data-en="First name">Prénom</label>
+                <input type="text" placeholder="Marie" />
+              </div>
+              <div class="form-group">
+                <label data-fr="Nom" data-en="Last name">Nom</label>
+                <input type="text" placeholder="Dupont" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-fr="Adresse email" data-en="Email address">Adresse email</label>
+              <input type="email" placeholder="marie@exemple.fr" />
+            </div>
+            <div class="form-group">
+              <label data-fr="Téléphone" data-en="Phone">Téléphone</label>
+              <input type="tel" placeholder="+33 6 00 00 00 00" />
+            </div>
+            <div class="form-group">
+              <label data-fr="Message" data-en="Message">Message</label>
+              <textarea placeholder="Réservation pour 4 personnes vendredi soir..."></textarea>
+            </div>
+            <button class="form-submit" data-fr="📨 Envoyer le message" data-en="📨 Send message" onclick="submitForm(this)">📨 Envoyer le message</button>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4 data-fr="Adresse" data-en="Address">Adresse</h4>
+              <p>3 Rue Alfred de Vigny<br>86100 Châtellerault, France</p>
+            </div>
+          </div>
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4 data-fr="Téléphone" data-en="Phone">Téléphone</h4>
+              <p><a href="tel:0579799452">05 79 79 94 52</a></p>
+            </div>
+          </div>
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">👤</div>
+            <div>
+              <h4 data-fr="Responsable" data-en="Manager">Responsable</h4>
+              <p>Mme Nathalie Imbert<br><span style="font-size:13px;color:var(--stone)" data-fr="Co-présidente" data-en="Co-president">Co-présidente</span></p>
+            </div>
+          </div>
+          <a href="https://wa.me/33579799452" target="_blank" rel="noopener noreferrer" class="whatsapp-btn animate-on-scroll">
+            <div class="whatsapp-icon">💬</div>
+            <span data-fr="Nous écrire sur WhatsApp" data-en="Message us on WhatsApp">Nous écrire sur WhatsApp</span>
+          </a>
+          <div class="map-embed animate-on-scroll">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.4317278453!2d0.54166!3d46.80595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fda9315db5e0c5%3A0x6c627fca2ac8e2c5!2sLe%20Go%C3%BBt%20des%20Autres!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Le Goût des Autres sur Google Maps"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS IN CONTACT PAGE -->
+  <section class="hours-section">
+    <div class="section-inner">
+      <div class="section-label" data-fr="Horaires d'ouverture" data-en="Opening Hours">Horaires d'ouverture</div>
+      <h2 class="section-title" data-fr="Quand nous <em>trouver</em>" data-en="When to <em>find us</em>">Quand nous <em>trouver</em></h2>
+      <div class="hours-grid">
+        <div class="hours-day">
+          <div class="day-name" data-fr="Lundi" data-en="Monday">Lundi</div>
+          <div class="day-time">12h – 14h</div>
+        </div>
+        <div class="hours-day">
+          <div class="day-name" data-fr="Mardi" data-en="Tuesday">Mardi</div>
+          <div class="day-time">12h – 14h</div>
+        </div>
+        <div class="hours-day">
+          <div class="day-name" data-fr="Mercredi" data-en="Wednesday">Mercredi</div>
+          <div class="day-time">12h – 14h</div>
+        </div>
+        <div class="hours-day">
+          <div class="day-name" data-fr="Jeudi" data-en="Thursday">Jeudi</div>
+          <div class="day-time">12h – 14h</div>
+        </div>
+        <div class="hours-day special">
+          <div class="day-name" data-fr="Vendredi ✨" data-en="Friday ✨">Vendredi ✨</div>
+          <div class="day-time">12h–14h & 19h–22h</div>
+        </div>
+        <div class="hours-day closed">
+          <div class="day-name" data-fr="Samedi" data-en="Saturday">Samedi</div>
+          <div class="day-time" data-fr="Fermé" data-en="Closed">Fermé</div>
+        </div>
+        <div class="hours-day">
+          <div class="day-name" data-fr="Dimanche" data-en="Sunday">Dimanche</div>
+          <div class="day-time">12h – 14h</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-contact -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ / SUPPORT PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page-section" id="page-faq">
+
+  <div style="background:var(--deep-green);padding:80px clamp(20px,5vw,60px) 60px;text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(74,122,98,0.2) 0%, transparent 70%)"></div>
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center;color:var(--gold)" data-fr="Support & FAQ" data-en="Support & FAQ">Support & FAQ</div>
+      <h1 class="section-title" style="color:var(--cream)" data-fr="Vos questions, <em>nos réponses</em>" data-en="Your questions, <em>our answers</em>">Vos questions, <em>nos réponses</em></h1>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="section-label" data-fr="Foire aux Questions" data-en="Frequently Asked Questions">Foire aux Questions</div>
+      <h2 class="section-title" data-fr="Tout ce que vous voulez <em>savoir</em>" data-en="Everything you want <em>to know</em>">Tout ce que vous voulez <em>savoir</em></h2>
+      <div class="faq-grid" style="margin-top:48px">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Comment fonctionnent les tarifs solidaires ?" data-en="How do solidarity prices work?">Comment fonctionnent les tarifs solidaires ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="Nos prix s'adaptent aux ressources financières de chaque client. Nous croyons que tout le monde mérite de bien manger. Lors de votre visite, parlez simplement à notre équipe et nous trouverons ensemble un tarif adapté à votre situation, dans la dignité et la bienveillance." data-en="Our prices adapt to each customer's financial resources. We believe everyone deserves to eat well. During your visit, simply speak to our team and we will find together a price suited to your situation, with dignity and kindness.">Nos prix s'adaptent aux ressources financières de chaque client. Nous croyons que tout le monde mérite de bien manger. Lors de votre visite, parlez simplement à notre équipe et nous trouverons ensemble un tarif adapté à votre situation, dans la dignité et la bienveillance.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Faut-il réserver à l'avance ?" data-en="Do I need to book in advance?">Faut-il réserver à l'avance ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="La réservation n'est pas obligatoire mais fortement conseillée, surtout pour le service du soir du vendredi. Appelez-nous au 05 79 79 94 52 ou passez simplement nous voir à l'adresse !" data-en="Reservation is not mandatory but highly recommended, especially for Friday evening service. Call us on 05 79 79 94 52 or simply come visit us at the address!">La réservation n'est pas obligatoire mais fortement conseillée, surtout pour le service du soir du vendredi. Appelez-nous au 05 79 79 94 52 ou passez simplement nous voir à l'adresse !</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Quelles cuisines du monde proposez-vous ?" data-en="What world cuisines do you offer?">Quelles cuisines du monde proposez-vous ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="Nous proposons des plats d'Afrique de l'Ouest (Gabon, Côte d'Ivoire), des Antilles (Martinique, Guadeloupe, Haïti) et du Brésil. Notre menu change régulièrement selon les saisons et les inspirations de notre équipe." data-en="We offer dishes from West Africa (Gabon, Ivory Coast), the Caribbean (Martinique, Guadeloupe, Haiti) and Brazil. Our menu changes regularly based on seasons and our team's inspiration.">Nous proposons des plats d'Afrique de l'Ouest (Gabon, Côte d'Ivoire), des Antilles (Martinique, Guadeloupe, Haïti) et du Brésil. Notre menu change régulièrement selon les saisons et les inspirations de notre équipe.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Proposez-vous des plats végétariens ?" data-en="Do you offer vegetarian dishes?">Proposez-vous des plats végétariens ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="Oui, notre carte inclut des options végétariennes inspirées des cuisines du monde. N'hésitez pas à nous signaler vos préférences alimentaires lors de votre réservation." data-en="Yes, our menu includes vegetarian options inspired by world cuisines. Please let us know your dietary preferences when making your reservation.">Oui, notre carte inclut des options végétariennes inspirées des cuisines du monde. N'hésitez pas à nous signaler vos préférences alimentaires lors de votre réservation.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Comment fonctionne le chantier d'insertion ?" data-en="How does the integration workshop work?">Comment fonctionne le chantier d'insertion ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="Notre restaurant est adossé à une entreprise d'insertion qui accompagne des personnes éloignées de l'emploi. Ces personnes travaillent en cuisine et en salle dans le cadre d'un parcours professionnel encadré, leur permettant d'acquérir des compétences et de retrouver la confiance en soi." data-en="Our restaurant is supported by a social enterprise that accompanies people far from employment. These individuals work in the kitchen and dining room as part of a supervised professional pathway, allowing them to gain skills and rebuild self-confidence.">Notre restaurant est adossé à une entreprise d'insertion qui accompagne des personnes éloignées de l'emploi. Ces personnes travaillent en cuisine et en salle dans le cadre d'un parcours professionnel encadré, leur permettant d'acquérir des compétences et de retrouver la confiance en soi.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span data-fr="Organisez-vous des événements ou repas de groupe ?" data-en="Do you organise events or group meals?">Organisez-vous des événements ou repas de groupe ?</span>
+            <div class="faq-chevron">▼</div>
+          </button>
+          <div class="faq-a"><p data-fr="Oui, nous accueillons volontiers des groupes, associations et entreprises souhaitant organiser des repas solidaires ou des événements culturels. Contactez-nous par téléphone pour en discuter." data-en="Yes, we gladly welcome groups, associations and companies wishing to organise solidarity meals or cultural events. Contact us by phone to discuss.">Oui, nous accueillons volontiers des groupes, associations et entreprises souhaitant organiser des repas solidaires ou des événements culturels. Contactez-nous par téléphone pour en discuter.</p></div>
+        </div>
+
+      </div>
+
+      <!-- SUPPORT CONTACT -->
+      <div style="margin-top:60px;background:var(--deep-green);border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center" class="animate-on-scroll">
+        <div>
+          <div class="section-label" style="color:var(--gold)" data-fr="Besoin d'aide ?" data-en="Need help?">Besoin d'aide ?</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--cream);margin-bottom:12px;line-height:1.2" data-fr="Notre équipe est à votre service" data-en="Our team is at your service">Notre équipe est à votre service</h3>
+          <p style="color:rgba(250,246,239,0.65);font-size:14px;line-height:1.7" data-fr="Pour toute question, réservation ou demande de partenariat, notre équipe vous répond rapidement." data-en="For any question, reservation or partnership request, our team responds quickly.">Pour toute question, réservation ou demande de partenariat, notre équipe vous répond rapidement.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="tel:0579799452" class="btn-primary" style="justify-content:center">📞 05 79 79 94 52</a>
+          <a href="https://wa.me/33579799452" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" style="justify-content:center">
+            <div class="whatsapp-icon">💬</div>
+            <span data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+          </a>
+          <a href="https://www.facebook.com/restaurantsolidaire" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="justify-content:center;border-color:rgba(250,246,239,0.2);color:var(--cream)">📘 <span data-fr="Page Facebook" data-en="Facebook Page">Page Facebook</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-faq -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER (on all pages via JS injection)
+═══════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-main">Le Goût des Autres</span>
+          <span class="logo-sub" data-fr="Restaurant Solidaire · Châtellerault" data-en="Solidarity Restaurant · Châtellerault">Restaurant Solidaire · Châtellerault</span>
+        </div>
+        <p class="footer-tagline" data-fr="La table qui rassemble, la cuisine qui change les vies. Premier restaurant solidaire de Châtellerault." data-en="The table that unites, the cuisine that changes lives. Châtellerault's first solidarity restaurant.">La table qui rassemble, la cuisine qui change les vies. Premier restaurant solidaire de Châtellerault.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/restaurantsolidaire" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">📘</a>
+          <a href="tel:0579799452" class="social-link" aria-label="Téléphone">📞</a>
+          <a href="https://wa.me/33579799452" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-fr="Navigation" data-en="Navigation">Navigation</h5>
+        <ul>
+          <li><a href="#" onclick="showPage('home')" data-fr="Accueil" data-en="Home">Accueil</a></li>
+          <li><a href="#" onclick="showPage('about')" data-fr="À propos" data-en="About">À propos</a></li>
+          <li><a href="#" onclick="showPage('menu')" data-fr="Menu" data-en="Menu">Menu</a></li>
+          <li><a href="#" onclick="showPage('gallery')" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-fr="Horaires" data-en="Hours">Horaires</h5>
+        <ul>
+          <li><a href="#" data-fr="Lundi–Jeudi : 12h–14h" data-en="Mon–Thu: 12–2pm">Lundi–Jeudi : 12h–14h</a></li>
+          <li><a href="#" data-fr="Vendredi : 12h–14h & 19h–22h" data-en="Friday: 12–2pm & 7–10pm">Vendredi : 12h–14h & 19h–22h</a></li>
+          <li><a href="#" data-fr="Dimanche : 12h–14h" data-en="Sunday: 12–2pm">Dimanche : 12h–14h</a></li>
+          <li><a href="#" data-fr="Samedi : Fermé" data-en="Saturday: Closed">Samedi : Fermé</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-fr="Contact" data-en="Contact">Contact</h5>
+        <ul>
+          <li><a href="tel:0579799452">📞 05 79 79 94 52</a></li>
+          <li><a href="#">📍 3 Rue Alfred de Vigny</a></li>
+          <li><a href="#">📮 86100 Châtellerault</a></li>
+          <li><a href="#" onclick="showPage('faq')" data-fr="❓ FAQ & Support" data-en="❓ FAQ & Support">❓ FAQ & Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-fr="© 2025 Le Goût des Autres. Restaurant solidaire à Châtellerault, France." data-en="© 2025 Le Goût des Autres. Solidarity restaurant in Châtellerault, France.">© 2025 Le Goût des Autres. Restaurant solidaire à Châtellerault, France.</p>
+      <div class="footer-links">
+        <a href="#" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+        <a href="#" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Photo galerie"/>
+</div>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <a href="tel:0579799452" class="sticky-btn sticky-phone" title="Appeler" aria-label="Appeler le restaurant">📞</a>
+  <a href="https://wa.me/33579799452" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-wa" title="WhatsApp" aria-label="WhatsApp">💬</a>
+</div>
+
+
+<script>
+// ──────── LANGUAGE SYSTEM ────────
+let currentLang = 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else if (el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'DIV' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4' || el.tagName === 'LABEL' || el.tagName === 'LI') {
+        el.innerHTML = val;
+      }
+    }
+  });
+}
+
+// ──────── PAGE ROUTING ────────
+function showPage(pageId) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('page-' + pageId);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Re-trigger scroll animations
+    setTimeout(initScrollAnimations, 100);
+  }
+  // Close mobile menu
+  const nl = document.getElementById('navLinks');
+  if (nl) nl.classList.remove('open');
+  return false;
+}
+
+// ──────── NAVBAR SCROLL ────────
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// ──────── MOBILE MENU ────────
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ──────── SCROLL ANIMATIONS ────────
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    el.classList.remove('visible');
+    observer.observe(el);
+  });
+}
+window.addEventListener('load', initScrollAnimations);
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+// ──────── FAQ TOGGLE ────────
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ──────── MENU FILTER ────────
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#menuGrid .menu-card').forEach(card => {
+    if (cat === 'all') {
+      card.style.display = '';
+    } else {
+      const cardCat = card.getAttribute('data-cat') || '';
+      card.style.display = cardCat.includes(cat) ? '' : 'none';
+    }
+  });
+}
+
+// ──────── LIGHTBOX ────────
+function openLightbox(item) {
+  const img = item.querySelector('img');
+  if (!img) return;
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ──────── FORM SUBMIT ────────
+function submitForm(btn) {
+  const orig = btn.innerHTML;
+  btn.innerHTML = '✅ ' + (currentLang === 'fr' ? 'Message envoyé !' : 'Message sent!');
+  btn.style.background = 'var(--sage)';
+  setTimeout(() => {
+    btn.innerHTML = orig;
+    btn.style.background = '';
+  }, 3000);
+}
+</script>
+</body>
+</html>
